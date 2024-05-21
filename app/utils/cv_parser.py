@@ -5,6 +5,10 @@ import streamlit as st
 
 from app.settings import settings
 
+from pypandoc.pandoc_download import download_pandoc
+
+download_pandoc()
+
 os.environ['OPENAI_API_KEY'] = settings.OPENAI_API_KEY
 
 
