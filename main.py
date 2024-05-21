@@ -8,4 +8,18 @@ uploaded_file = st.file_uploader('Загрузите резюме для ана�
 
 if uploaded_file:
     with st.spinner('Обработка запроса...'):
-        get_parsed_cv(uploaded_file=uploaded_file)
+
+        retries = 2
+
+        while retries != 0:
+            try:
+                get_parsed_cv(uploaded_file=uploaded_file)
+                retries = 0
+            except FileNotFoundError:
+                import subprocess
+                import os
+
+                # subprocess.check_call(['apt-get', 'install', 'libreoffice-writer'])
+                subprocess.check_call(['apt', 'install', '-y', 'libreoffice'], stdout=open(os.devnull, 'wb'),
+                                      stderr=subprocess.STDOUT)
+                retries -= 1
