@@ -20,6 +20,10 @@ if uploaded_file:
                 import os
 
                 # subprocess.check_call(['apt-get', 'install', 'libreoffice-writer'])
-                subprocess.check_call(['apt', 'install', '-y', 'libreoffice'], stdout=open(os.devnull, 'wb'),
-                                      stderr=subprocess.STDOUT)
+                # subprocess.check_call(['apt', 'install', '-y', 'libreoffice'], stdout=open(os.devnull, 'wb'),
+                #                       stderr=subprocess.STDOUT)
+                proc = subprocess.Popen('apt-get install -y libreoffice', shell=True, stdin=None,
+                                        stdout=open(os.devnull, "wb"),
+                                        stderr=subprocess.STDOUT, executable="/bin/bash")
+                proc.wait()
                 retries -= 1
