@@ -1,6 +1,6 @@
 import streamlit as st
 
-from app.utils.cv_parser import get_parsed_cv
+from utils.cv_parser import get_parsed_cv
 
 
 st.markdown("<h1 style='text-align: center'>Парсер резюме</h1>", unsafe_allow_html=True)
