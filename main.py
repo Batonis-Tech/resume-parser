@@ -1,7 +1,7 @@
 import streamlit as st
 
 from app.utils.cv_parser import get_parsed_cv
-from app.utils.download_required_packages import download_package
+# from app.utils.download_required_packages import download_package
 
 # download_package('libreoffice')
 # download_package('libreoffice-writer')
