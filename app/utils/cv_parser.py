@@ -22,13 +22,15 @@ def load_document(file):
 def get_prompt(file_data) -> str:
     prompt = (
         f"Выдели из содержимого этого файла, только следующую информацию: — фамилия (surname) — имя ("
-        f"name) — отчество (patronymic) — телефон (phone) — telegram (telegram) — email (email) — город проживания ("
-        f"city) — желаемая должность (desired_position) — зарплата (salary) — занятость (employment) — активно или нет"
-        f"ищет работу (actively_looking_for_job) — общий опыт (total_experience) — ключевые навыки, в виде массива строк (key_skills) — "
-        f"раздел обо мне (about_me) — языки, в виде массива строк (languages) — образование, в виде строки (education) "
-        f"— сертификаты, в виде массива строк (certificates) Далее опыт работы в компаниях (work_experience), "
-        f"но не более 10 шт: — наименование компании (company_name) — год начала (start_year) — год конец (end_year) — "
-        f"срок работы (duration) — должность (position) — описание (description). Оформи эти данные в JSON, "
+        f"name) — отчество (patronymic) — телефон (phone) — telegram (telegram) — email (email) — github (github) "
+        f"—linkedin (linkedin) — город проживания (city) — желаемая должность (desired_position) — зарплата (salary) — "
+        f"занятость (employment) — активно или нет ищет работу (actively_looking_for_job) — общий опыт ("
+        f"total_experience) — ключевые навыки, в виде массива строк (key_skills) — раздел обо мне (about_me) — языки, "
+        f"в виде массива строк (languages) — образование, в виде строки (education) — сертификаты, в виде массива "
+        f"строк (certificates) Далее опыт работы в компаниях (work_experience), но не более 10 шт: — наименование "
+        f"компании (company_name) — год начала (start_year) — год конец (end_year) — срок работы (duration) — "
+        f"должность (position) — описание (description) — ссылки (links) это поле составь из всех ссылок в файле на "
+        f"социальные сети не включая туда ссылки на компании, в виде массива строк. Оформи эти данные в JSON, "
         f"где данные в скобках это ключи для JSON с, если каких-то значений не хватает, то заполни их null. следуй "
         f"строго по шаблону. Содержимое файла: {file_data}"
     )
